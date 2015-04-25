@@ -1,0 +1,26 @@
+{
+  "name": "avalanche: Object menu",
+  "version": "2.0.0",
+  "homepage": "https://github.com/avalanchesass/avalanche_object_menu",
+  "authors": [
+    "Markus Oberlehner"
+  ],
+  "description": "Basic CSS menu styles",
+  "keywords": [
+    "SASS",
+    "CSS",
+    "Menu"
+  ],
+  "license": "GPL v2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "avalanche_utility_clearfix": "dev",
+    "avalanche_utility_list_reset": "dev"
+  }
+}
