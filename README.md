@@ -1,6 +1,6 @@
-# avalanche: Object menu
+# avalanche: Component menu
 Basic CSS menu styles  
-https://github.com/avalanchesass/avalanche_object_menu
+https://github.com/avalanchesass/avalanche_component_menu
 
 ### Author
 Markus Oberlehner  
