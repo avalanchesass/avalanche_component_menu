@@ -26,9 +26,10 @@ $c-menu-off-canvas: true !default;
  * Defaults
  */
 .c-menu__list {
-  @include u-list-reset();
   margin: 0;
   background: $cs-a;
+
+  @include u-list-reset();
 }
 
 .c-menu__list--level1 {
@@ -122,14 +123,13 @@ $c-menu-off-canvas: true !default;
       @include u-clearfix();
     }
   }
-
   @if $c-menu-horizontal {
     /**
      * @name Horizontal (non responsiv)
      * @level X.X.X.X.
      *
      * @markup
-     *   <nav class="c-menu c-menu--horizontal">
+     *   <nav class="c-menu c-menu--horizontal c-menu--horizontal--dropdown">
      *     <ul class="c-menu__list c-menu__list--level1">
      *       <li class="c-menu__item c-menu__item--level1">
      *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
@@ -152,6 +152,11 @@ $c-menu-off-canvas: true !default;
      *   </nav>
      */
     .c-menu--horizontal {
+      .c-menu__item--level1 {
+        float: left;
+      }
+    }
+    .c-menu--horizontal--dropdown {
       .c-menu__list--level1 .c-menu__list {
         position: absolute;
         visibility: hidden;
@@ -167,12 +172,8 @@ $c-menu-off-canvas: true !default;
         visibility: visible;
         opacity: 1;
       }
-      .c-menu__item--level1 {
-        float: left;
-      }
     }
   }
-
   @if $c-menu-horizontal-responsive {
     /**
      * @name Horizontal responsiv
@@ -226,7 +227,6 @@ $c-menu-off-canvas: true !default;
         }
       }
     }
-
     .c-menu--horizontal-responsive--dropdown {
       @media (min-width: $c-menu-mobile-breakpoint) {
         .c-menu__list--level1 .c-menu__list {
