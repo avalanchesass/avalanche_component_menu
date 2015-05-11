@@ -20,7 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "avalanche_utility_clearfix": "dev",
-    "avalanche_utility_list_reset": "dev"
+    "avalanche_utility_clearfix": "^2.0.0",
+    "avalanche_utility_list_reset": "^2.0.0"
   }
 }
