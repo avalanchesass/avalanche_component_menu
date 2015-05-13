@@ -68,7 +68,7 @@ $c-menu-off-canvas: true !default;
    * @name Off canvas
    * @level X.X.X.
    *
-   * @markup
+   * @code
    *   <nav class="c-menu c-menu--off-canvas">
    *     <div class="c-menu__controls">
    *       <label for="c-menu__checkbox" class="c-menu__toggle button button--s">&#9776; Menu</label>
@@ -128,7 +128,7 @@ $c-menu-off-canvas: true !default;
      * @name Horizontal (non responsive)
      * @level X.X.X.X.
      *
-     * @markup
+     * @code
      *   <nav class="c-menu c-menu--horizontal c-menu--horizontal--dropdown">
      *     <ul class="c-menu__list c-menu__list--level1">
      *       <li class="c-menu__item c-menu__item--level1">
@@ -179,7 +179,7 @@ $c-menu-off-canvas: true !default;
      * @name Horizontal responsive
      * @level X.X.X.X.
      *
-     * @markup
+     * @code
      *   <nav class="c-menu c-menu--horizontal-responsive c-menu--horizontal-responsive--dropdown">
      *     <div class="c-menu__controls">
      *       <label for="c-menu__checkbox-horizontal" class="c-menu__toggle button button--s">&#9776; Menu</label>
@@ -259,7 +259,7 @@ $c-menu-off-canvas: true !default;
    * @name Vertical
    * @level X.X.X.
    *
-   * @markup
+   * @code
    *   <nav class="c-menu c-menu--vertical">
    *     <ul class="c-menu__list c-menu__list--level1">
    *       <li class="c-menu__item c-menu__item--level1">
