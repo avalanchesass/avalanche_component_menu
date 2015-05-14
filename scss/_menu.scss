@@ -1,12 +1,12 @@
 /**
  * @name Menu
  * @level X.X.
+ * @description
+ *   Basic menu styling for various menu types
  */
 /**
  * Variables
  */
-$c-menu: true !default;
-
 // Breakpoint for mobile version of menu
 $c-menu-mobile-breakpoint: $breakpoint-m !default;
 
@@ -63,59 +63,12 @@ $c-menu-off-canvas: true !default;
 
 
 
-@if $c-menu-off-canvas {
-  /**
-   * @name Off canvas
-   * @level X.X.X.
-   *
-   * @code
-   *   <nav class="c-menu c-menu--off-canvas">
-   *     <div class="c-menu__controls">
-   *       <label for="c-menu__checkbox" class="c-menu__toggle button button--s">&#9776; Menu</label>
-   *     </div>
-   *     <input id="c-menu__checkbox" class="c-menu__checkbox" name="c-menu__checkbox" type="checkbox">
-   *     <ul class="c-menu__list c-menu__list--level1">
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
-   *       </li>
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
-   *       </li>
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
-   *       </li>
-   *     </ul>
-   *   </nav>
-   */
-  html {
-    position: relative;
-  }
-  .c-menu--off-canvas {
-    .c-menu__controls {
-      display: block;
-    }
-    .c-menu__list--level1 {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 100;
-      max-width: 20em;
-      width: 70%;
-      transform: translate(-100%, 0);
-    }
-    .c-menu__checkbox:checked + .c-menu__list--level1 {
-      transform: translate(0, 0);
-    }
-  }
-}
-
-
-
 @if $c-menu-horizontal or $c-menu-horizontal-responsive {
   /**
    * @name Horizontal
    * @level X.X.X.
+   * @description
+   *   Classic horizontal menu
    */
   .c-menu--horizontal,
   .c-menu--horizontal-responsive {
@@ -182,7 +135,7 @@ $c-menu-off-canvas: true !default;
      * @code
      *   <nav class="c-menu c-menu--horizontal-responsive c-menu--horizontal-responsive--dropdown">
      *     <div class="c-menu__controls">
-     *       <label for="c-menu__checkbox-horizontal" class="c-menu__toggle button button--s">&#9776; Menu</label>
+     *       <label for="c-menu__checkbox-horizontal" class="c-menu__toggle c-button c-button--s">&#9776; Menu</label>
      *     </div>
      *     <input id="c-menu__checkbox-horizontal" class="c-menu__checkbox" name="c-menu__checkbox-horizontal" type="checkbox">
      *     <ul class="c-menu__list c-menu__list--level1">
@@ -285,5 +238,54 @@ $c-menu-off-canvas: true !default;
   .c-menu--vertical {
     // no styling necessary
     // use this class to add your own stylings
+  }
+}
+
+
+
+@if $c-menu-off-canvas {
+  /**
+   * @name Off canvas
+   * @level X.X.X.
+   *
+   * @code
+   *   <nav class="c-menu c-menu--off-canvas">
+   *     <div class="c-menu__controls">
+   *       <label for="c-menu__checkbox" class="c-menu__toggle c-button c-button--s">&#9776; Menu</label>
+   *     </div>
+   *     <input id="c-menu__checkbox" class="c-menu__checkbox" name="c-menu__checkbox" type="checkbox">
+   *     <ul class="c-menu__list c-menu__list--level1">
+   *       <li class="c-menu__item c-menu__item--level1">
+   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
+   *       </li>
+   *       <li class="c-menu__item c-menu__item--level1">
+   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
+   *       </li>
+   *       <li class="c-menu__item c-menu__item--level1">
+   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
+   *       </li>
+   *     </ul>
+   *   </nav>
+   */
+  html {
+    position: relative;
+  }
+  .c-menu--off-canvas {
+    .c-menu__controls {
+      display: block;
+    }
+    .c-menu__list--level1 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      max-width: 20em;
+      width: 70%;
+      transform: translate(-100%, 0);
+    }
+    .c-menu__checkbox:checked + .c-menu__list--level1 {
+      transform: translate(0, 0);
+    }
   }
 }
