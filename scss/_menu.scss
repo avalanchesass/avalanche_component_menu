@@ -1,12 +1,11 @@
 /**
- * @name Menu
+ * Menu
+ *
+ * Basic menu styling for various menu types
+ *
  * @level X.X.
- * @description
- *   Basic menu styling for various menu types
  */
-/**
- * Variables
- */
+// Variables
 // Breakpoint for mobile version of menu
 $c-menu-mobile-breakpoint: $breakpoint-m !default;
 
@@ -22,9 +21,7 @@ $c-menu-off-canvas: true !default;
 
 
 
-/**
- * Defaults
- */
+// Defaults
 .c-menu__list {
   margin: 0;
   background: $cs-a;
@@ -65,10 +62,11 @@ $c-menu-off-canvas: true !default;
 
 @if $c-menu-horizontal or $c-menu-horizontal-responsive {
   /**
-   * @name Horizontal
+   * Horizontal
+   *
+   * Classic horizontal menu
+   *
    * @level X.X.X.
-   * @description
-   *   Classic horizontal menu
    */
   .c-menu--horizontal,
   .c-menu--horizontal-responsive {
@@ -78,31 +76,31 @@ $c-menu-off-canvas: true !default;
   }
   @if $c-menu-horizontal {
     /**
-     * @name Horizontal (non responsive)
-     * @level X.X.X.X.
+     * Horizontal (non responsive)
      *
-     * @code
-     *   <nav class="c-menu c-menu--horizontal c-menu--horizontal--dropdown">
-     *     <ul class="c-menu__list c-menu__list--level1">
-     *       <li class="c-menu__item c-menu__item--level1">
-     *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
-     *         <ul class="c-menu__list c-menu__list--level2">
-     *           <li class="c-menu__item c-menu__item--level2">
-     *             <a href="#" class="c-menu__link c-menu__link--level2">Link 1.1</a>
-     *           </li>
-     *           <li class="c-menu__item c-menu__item--level2">
-     *             <a href="#" class="c-menu__link c-menu__link--level2">Link 1.2</a>
-     *           </li>
-     *         </ul>
-     *       </li>
-     *       <li class="c-menu__item c-menu__item--level1">
-     *         <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
-     *       </li>
-     *       <li class="c-menu__item c-menu__item--level1">
-     *         <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
-     *       </li>
-     *     </ul>
-     *   </nav>
+     * @level X.X.X.X.
+     * @markup
+     * <nav class="c-menu c-menu--horizontal c-menu--horizontal--dropdown">
+     *   <ul class="c-menu__list c-menu__list--level1">
+     *     <li class="c-menu__item c-menu__item--level1">
+     *       <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
+     *       <ul class="c-menu__list c-menu__list--level2">
+     *         <li class="c-menu__item c-menu__item--level2">
+     *           <a href="#" class="c-menu__link c-menu__link--level2">Link 1.1</a>
+     *         </li>
+     *         <li class="c-menu__item c-menu__item--level2">
+     *           <a href="#" class="c-menu__link c-menu__link--level2">Link 1.2</a>
+     *         </li>
+     *       </ul>
+     *     </li>
+     *     <li class="c-menu__item c-menu__item--level1">
+     *       <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
+     *     </li>
+     *     <li class="c-menu__item c-menu__item--level1">
+     *       <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
+     *     </li>
+     *   </ul>
+     * </nav>
      */
     .c-menu--horizontal {
       .c-menu__item--level1 {
@@ -129,35 +127,35 @@ $c-menu-off-canvas: true !default;
   }
   @if $c-menu-horizontal-responsive {
     /**
-     * @name Horizontal responsive
-     * @level X.X.X.X.
+     * Horizontal responsive
      *
-     * @code
-     *   <nav class="c-menu c-menu--horizontal-responsive c-menu--horizontal-responsive--dropdown">
-     *     <div class="c-menu__controls">
-     *       <label for="c-menu__checkbox-horizontal" class="c-menu__toggle c-button c-button--s">&#9776; Menu</label>
-     *     </div>
-     *     <input id="c-menu__checkbox-horizontal" class="c-menu__checkbox" name="c-menu__checkbox-horizontal" type="checkbox">
-     *     <ul class="c-menu__list c-menu__list--level1">
-     *       <li class="c-menu__item c-menu__item--level1">
-     *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
-     *         <ul class="c-menu__list c-menu__list--level2">
-     *           <li class="c-menu__item c-menu__item--level2">
-     *             <a href="#" class="c-menu__link c-menu__link--level2">Link 1.1</a>
-     *           </li>
-     *           <li class="c-menu__item c-menu__item--level2">
-     *             <a href="#" class="c-menu__link c-menu__link--level2">Link 1.2</a>
-     *           </li>
-     *         </ul>
-     *       </li>
-     *       <li class="c-menu__item c-menu__item--level1">
-     *         <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
-     *       </li>
-     *       <li class="c-menu__item c-menu__item--level1">
-     *         <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
-     *       </li>
-     *     </ul>
-     *   </nav>
+     * @level X.X.X.X.
+     * @markup
+     * <nav class="c-menu c-menu--horizontal-responsive c-menu--horizontal-responsive--dropdown">
+     *   <div class="c-menu__controls">
+     *     <label for="c-menu__checkbox-horizontal" class="c-menu__toggle c-button c-button--s">&#9776; Menu</label>
+     *   </div>
+     *   <input id="c-menu__checkbox-horizontal" class="c-menu__checkbox" name="c-menu__checkbox-horizontal" type="checkbox">
+     *   <ul class="c-menu__list c-menu__list--level1">
+     *     <li class="c-menu__item c-menu__item--level1">
+     *       <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
+     *       <ul class="c-menu__list c-menu__list--level2">
+     *         <li class="c-menu__item c-menu__item--level2">
+     *           <a href="#" class="c-menu__link c-menu__link--level2">Link 1.1</a>
+     *         </li>
+     *         <li class="c-menu__item c-menu__item--level2">
+     *           <a href="#" class="c-menu__link c-menu__link--level2">Link 1.2</a>
+     *         </li>
+     *       </ul>
+     *     </li>
+     *     <li class="c-menu__item c-menu__item--level1">
+     *       <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
+     *     </li>
+     *     <li class="c-menu__item c-menu__item--level1">
+     *       <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
+     *     </li>
+     *   </ul>
+     * </nav>
      */
     .c-menu--horizontal-responsive {
       @media (max-width: breakpointmax($c-menu-mobile-breakpoint)) {
@@ -209,31 +207,31 @@ $c-menu-off-canvas: true !default;
 
 @if $c-menu-vertical {
   /**
-   * @name Vertical
-   * @level X.X.X.
+   * Vertical
    *
-   * @code
-   *   <nav class="c-menu c-menu--vertical">
-   *     <ul class="c-menu__list c-menu__list--level1">
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
-   *         <ul class="c-menu__list c-menu__list--level2">
-   *           <li class="c-menu__item c-menu__item--level2">
-   *             <a href="#" class="c-menu__link c-menu__link--level2">Link 1.1</a>
-   *           </li>
-   *           <li class="c-menu__item c-menu__item--level2">
-   *             <a href="#" class="c-menu__link c-menu__link--level2">Link 1.2</a>
-   *           </li>
-   *         </ul>
-   *       </li>
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
-   *       </li>
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
-   *       </li>
-   *     </ul>
-   *   </nav>
+   * @level X.X.X.
+   * @markup
+   * <nav class="c-menu c-menu--vertical">
+   *   <ul class="c-menu__list c-menu__list--level1">
+   *     <li class="c-menu__item c-menu__item--level1">
+   *       <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
+   *       <ul class="c-menu__list c-menu__list--level2">
+   *         <li class="c-menu__item c-menu__item--level2">
+   *           <a href="#" class="c-menu__link c-menu__link--level2">Link 1.1</a>
+   *         </li>
+   *         <li class="c-menu__item c-menu__item--level2">
+   *           <a href="#" class="c-menu__link c-menu__link--level2">Link 1.2</a>
+   *         </li>
+   *       </ul>
+   *     </li>
+   *     <li class="c-menu__item c-menu__item--level1">
+   *       <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
+   *     </li>
+   *     <li class="c-menu__item c-menu__item--level1">
+   *       <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
+   *     </li>
+   *   </ul>
+   * </nav>
    */
   .c-menu--vertical {
     // no styling necessary
@@ -245,27 +243,27 @@ $c-menu-off-canvas: true !default;
 
 @if $c-menu-off-canvas {
   /**
-   * @name Off canvas
-   * @level X.X.X.
+   * Off canvas
    *
-   * @code
-   *   <nav class="c-menu c-menu--off-canvas">
-   *     <div class="c-menu__controls">
-   *       <label for="c-menu__checkbox" class="c-menu__toggle c-button c-button--s">&#9776; Menu</label>
-   *     </div>
-   *     <input id="c-menu__checkbox" class="c-menu__checkbox" name="c-menu__checkbox" type="checkbox">
-   *     <ul class="c-menu__list c-menu__list--level1">
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
-   *       </li>
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
-   *       </li>
-   *       <li class="c-menu__item c-menu__item--level1">
-   *         <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
-   *       </li>
-   *     </ul>
-   *   </nav>
+   * @level X.X.X.
+   * @markup
+   * <nav class="c-menu c-menu--off-canvas">
+   *   <div class="c-menu__controls">
+   *     <label for="c-menu__checkbox" class="c-menu__toggle c-button c-button--s">&#9776; Menu</label>
+   *   </div>
+   *   <input id="c-menu__checkbox" class="c-menu__checkbox" name="c-menu__checkbox" type="checkbox">
+   *   <ul class="c-menu__list c-menu__list--level1">
+   *     <li class="c-menu__item c-menu__item--level1">
+   *       <a href="#" class="c-menu__link c-menu__link--level1">Link 1</a>
+   *     </li>
+   *     <li class="c-menu__item c-menu__item--level1">
+   *       <a href="#" class="c-menu__link c-menu__link--level1">Link 2</a>
+   *     </li>
+   *     <li class="c-menu__item c-menu__item--level1">
+   *       <a href="#" class="c-menu__link c-menu__link--level1">Link 3</a>
+   *     </li>
+   *   </ul>
+   * </nav>
    */
   html {
     position: relative;
