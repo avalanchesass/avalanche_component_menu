@@ -1,0 +1,27 @@
+@import 'avalanchesass_component_menu/style_guide';
+
+/*---
+title:   Mixin
+name:    component_menu_mixin
+section: component_menu
+sort:    2
+---
+
+```css
+// Card.
+c-card([$-border-color: map-get($cs-grey, a)[, $-background-color: #fff]])
+
+// Card figure.
+c-card-figure()
+```
+*/
+@mixin c-card($-border-color: map-get($cs-grey, a), $-background-color: #fff) {
+  background-color: $-background-color;
+  @if $-border-color {
+    border: 1px solid $-border-color;
+  }
+}
+
+@mixin c-card-figure() {
+  margin-top: 0;
+}

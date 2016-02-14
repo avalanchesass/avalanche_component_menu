@@ -1,0 +1,28 @@
+{
+  "name": "avalanchesass_component_menu",
+  "description": "Basic menu styles",
+  "keywords": [
+    "avalanchesass-package",
+    "eyeglass-module",
+    "sass"
+  ],
+  "version": "3.0.0",
+  "author": "Markus Oberlehner",
+  "homepage": "https://github.com/avalanchesass/avalanche_component_menu",
+  "license": "GPL v2",
+  "dependencies": {
+    "avalanchesass_utility_list_reset": "avalanchesass/avalanche_utility_list_reset#dev-3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avalanchesass/avalanche_component_menu"
+  },
+  "bugs": {
+    "url": "https://github.com/avalanchesass/avalanche_component_menu/issues"
+  },
+  "eyeglass": {
+    "sassDir": "scss",
+    "exports": false,
+    "needs": "^0.8.2"
+  }
+}

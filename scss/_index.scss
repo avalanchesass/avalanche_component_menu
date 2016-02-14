@@ -1,0 +1,122 @@
+/**
+ * Responsive behaviour
+ - by default render only c-menu--horizontal@m
+ - c-menu is vertical menu
+ - sub menus are stupid
+ - object or compoentn :( i still prefer component
+ - add js script
+ */
+
+
+
+//@import 'avalanchesass_utility_list_reset/mixin';
+@import 'avalanchesass_component_menu/style_guide';
+@import 'avalanchesass_component_menu/variable';
+//@import 'avalanchesass_component_menu/mixin';
+
+/* extract component.css */
+/* extract component_menu.css */
+/*---
+title:   Example
+name:    component_menu_example
+section: component_menu
+sort:    1
+---
+
+```example:html
+<ul class="#{$c-menu-namespace}">
+  <li class="#{$c-menu-namespace}__item">
+    <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+  </li>
+  <li class="#{$c-menu-namespace}__item">
+    <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+  </li>
+  <li class="#{$c-menu-namespace}__item">
+    <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+  </li>
+</ul>
+```
+
+
+```example:html
+<ul class="#{$c-menu-namespace} #{$c-menu-namespace}--horizontal@m js-c-nav">
+  <li class="#{$c-menu-namespace}__item">
+    <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+  </li>
+  <li class="#{$c-menu-namespace}__item">
+    <a class="#{$c-menu-namespace}__link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sub menu</a>
+    <ul class="#{$c-menu-namespace} #{$c-menu-namespace}__sub">
+      <li class="#{$c-menu-namespace}__item">
+        <a class="#{$c-menu-namespace}__link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sub menu</a>
+        <ul class="#{$c-menu-namespace} #{$c-menu-namespace}__sub">
+          <li class="#{$c-menu-namespace}__item">
+            <a class="#{$c-menu-namespace}__link" href="#">Link as dfasd f</a>
+          </li>
+          <li class="#{$c-menu-namespace}__item">
+            <a class="#{$c-menu-namespace}__link" href="#">Link asdf</a>
+          </li>
+          <li class="#{$c-menu-namespace}__item">
+            <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+          </li>
+        </ul>
+      </li>
+      <li class="#{$c-menu-namespace}__item">
+        <a class="#{$c-menu-namespace}__link" href="#">Link asdfas dfas</a>
+      </li>
+      <li class="#{$c-menu-namespace}__item">
+        <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+      </li>
+    </ul>
+  </li>
+  <li class="#{$c-menu-namespace}__item">
+    <a class="#{$c-menu-namespace}__link" href="#">Link</a>
+  </li>
+</ul>
+```
+*/
+.#{$c-menu-namespace} {
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (min-width: map-get($breakpoints, m)) {
+  .#{$c-menu-namespace}--horizontal\@m {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    > .#{$c-menu-namespace}__item:not(:first-child) {
+      margin-left: map-get($spacing, m);
+    }
+    .#{$c-menu-namespace}__item {
+      position: relative;
+    }
+    .#{$c-menu-namespace}__sub {
+      position: absolute;
+      left: 0;
+      display: none;
+      margin-left: 0;
+      min-width: 10em;
+      .#{$c-menu-namespace}__sub {
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+}
+
+.#{$c-menu-namespace}__link {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.#{$c-menu-namespace}__sub {
+  margin-left: map-get($spacing, s);
+  &.is-open,
+  .#{$c-menu-namespace}__item:hover > &:not(.no-hover) {
+    display: block;
+  }
+}
+/* end extract component_menu.css */
+/* end extract component.css */

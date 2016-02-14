@@ -1,7 +1,8 @@
-# avalanche: Component menu
-Basic CSS menu styles  
+# avalanchesass_component_menu
+Basic menu styles  
 https://github.com/avalanchesass/avalanche_component_menu
 
+## About
 ### Author
 Markus Oberlehner  
 Twitter: https://twitter.com/MaOberlehner

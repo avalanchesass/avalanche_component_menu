@@ -1,0 +1,14 @@
+@import 'avalanchesass_component_menu/style_guide';
+
+$c-menu-namespace: '#{map-get($namespace, component)}menu' !default;
+/*---
+title:   Variable
+name:    component_menu_variable
+section: component_menu
+sort:    3
+---
+
+```css
+$c-menu-namespace: '#{$c-menu-namespace}';
+```
+*/
