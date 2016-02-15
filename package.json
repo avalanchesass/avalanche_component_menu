@@ -24,5 +24,6 @@
     "sassDir": "scss",
     "exports": false,
     "needs": "^0.8.2"
-  }
+  },
+  "browser": "js/index.js"
 }
