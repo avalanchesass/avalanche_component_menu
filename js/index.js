@@ -11,6 +11,7 @@
 
     configure(self, {
       focusopen: 'enabled',
+      spaceopen: 'disabled',
       clickopen: 'disabled',
       classNames: {
         link: 'c-menu__link',
@@ -50,6 +51,22 @@
       }
     });
 
+    if (self.options.spaceopen == 'enabled') {
+      $.bind($$('.' + self.options.classNames.link, self.element), {
+        'keydown': function (e) {
+          if (e.keyCode == 32) {
+            var trigger = e.target;
+            var subMenu = trigger.nextElementSibling;
+
+            if (subMenu && subMenu.classList.contains(self.options.classNames.sub)) {
+              e.preventDefault();
+              self.toggleSubMenu(subMenu);
+            }
+          }
+        }
+      });
+    }
+
     if (self.options.clickopen == 'enabled') {
       $$('.' + self.options.classNames.sub, self.element).forEach(function (subMenu) {
         subMenu.classList.add(self.options.classNames.nohover)
@@ -83,6 +100,17 @@
       // Remove open class and aria rule from not targeted sub menus.
       trigger.setAttribute('aria-expanded', false);
       subMenu.classList.remove(self.options.classNames.open);
+    }
+    ,
+    toggleSubMenu: function (subMenu) {
+      var self = this;
+
+      if (subMenu.classList.contains(self.options.classNames.open)) {
+        self.closeSubMenu(subMenu);
+      }
+      else {
+        self.openSubMenu(subMenu);
+      }
     }
   };
 
@@ -126,7 +154,7 @@
   var slice = Array.prototype.slice;
 
   function $(expr, con) {
-    return typeof expr === "string" ? (con || document).querySelector(expr) : expr || null;
+    return typeof expr === 'string' ? (con || document).querySelector(expr) : expr || null;
   }
 
   function $$(expr, con) {
