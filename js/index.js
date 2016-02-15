@@ -139,17 +139,6 @@
     }
   }
 
-  function isDescendant(parent, child) {
-    var node = child.parentNode;
-    while (node != null) {
-      if (node == parent) {
-        return true;
-      }
-      node = node.parentNode;
-    }
-    return false;
-  }
-
   // Helpers.
   var slice = Array.prototype.slice;
 
@@ -161,30 +150,16 @@
     return slice.call((con || document).querySelectorAll(expr));
   }
 
-  $.create = function(tag, o) {
-    var element = document.createElement(tag);
-
-    for (var i in o) {
-      var val = o[i];
-
-      if (i === 'inside') {
-        $(val).appendChild(element);
+  function isDescendant(parent, child) {
+    var node = child.parentNode;
+    while (node != null) {
+      if (node == parent) {
+        return true;
       }
-      else if (i === 'around') {
-        var ref = $(val);
-        ref.parentNode.insertBefore(element, ref);
-        element.appendChild(ref);
-      }
-      else if (i in element) {
-        element[i] = val;
-      }
-      else {
-        element.setAttribute(i, val);
-      }
+      node = node.parentNode;
     }
-
-    return element;
-  };
+    return false;
+  }
 
   $.bind = function(elements, o) {
     if (elements) {
@@ -198,18 +173,6 @@
         }
       });
     }
-  };
-
-  $.fire = function(target, type, properties) {
-    var evt = document.createEvent('HTMLEvents');
-
-    evt.initEvent(type, true, true );
-
-    for (var j in properties) {
-      evt[j] = properties[j];
-    }
-
-    return target.dispatchEvent(evt);
   };
 
   // Initialization.
