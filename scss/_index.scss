@@ -39,7 +39,7 @@ sort:    1
 
 
 ```example:html
-<ul class="#{$c-menu-namespace} #{$c-menu-namespace}--horizontal@m js-c-nav">
+<ul class="#{$c-menu-namespace} #{$c-menu-namespace}--horizontal@m js-#{$c-menu-namespace}">
   <li class="#{$c-menu-namespace}__item">
     <a class="#{$c-menu-namespace}__link" href="#">Link</a>
   </li>
