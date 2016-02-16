@@ -86,30 +86,24 @@
 
   _.prototype = {
     openSubMenu: function (subMenu) {
-      var self = this;
-      var trigger = subMenu.previousElementSibling;
-
+      subMenu = $(subMenu, this.element);
       // Add open class and aria rule to the sub menu.
-      trigger.setAttribute('aria-expanded', true);
-      subMenu.classList.add(self.options.classNames.open);
+      subMenu.previousElementSibling.setAttribute('aria-expanded', true);
+      subMenu.classList.add(this.options.classNames.open);
     },
     closeSubMenu: function (subMenu) {
-      var self = this;
-      var trigger = subMenu.previousElementSibling;
-
+      subMenu = $(subMenu, this.element);
       // Remove open class and aria rule from not targeted sub menus.
-      trigger.setAttribute('aria-expanded', false);
-      subMenu.classList.remove(self.options.classNames.open);
-    }
-    ,
+      subMenu.previousElementSibling.setAttribute('aria-expanded', false);
+      subMenu.classList.remove(this.options.classNames.open);
+    },
     toggleSubMenu: function (subMenu) {
-      var self = this;
-
-      if (subMenu.classList.contains(self.options.classNames.open)) {
-        self.closeSubMenu(subMenu);
+      subMenu = $(subMenu, this.element);
+      if (subMenu.classList.contains(this.options.classNames.open)) {
+        this.closeSubMenu(subMenu);
       }
       else {
-        self.openSubMenu(subMenu);
+        this.openSubMenu(subMenu);
       }
     }
   };
@@ -175,31 +169,17 @@
     }
   };
 
-  // Initialization.
-  function init() {
-    $$('.js-c-nav').forEach(function (element) {
-      new _(element);
-    });
-  }
-
-  // Are we in a browser? Check for Document constructor.
-  if (typeof Document !== 'undefined') {
-    // DOM already loaded?
-    if (document.readyState !== 'loading') {
-      init();
-    }
-    else {
-      // Wait for it.
-      document.addEventListener('DOMContentLoaded', init);
-    }
-  }
-
   _.$ = $;
   _.$$ = $$;
 
   // Make sure to export componentNav on self when in a browser.
   if (typeof self !== 'undefined') {
     self.componentNav = _;
+  }
+
+  // Expose componentNav as a CJS module.
+  if (typeof module === 'object' && module.exports) {
+    module.exports = _;
   }
 
   return _;
