@@ -7,6 +7,11 @@
     self.element = $(element);
     self.options = {};
 
+    // Return an empty object if the element does not exist.
+    if (!self.element) {
+      return {};
+    }
+
     o = o || {};
 
     configure(self, {
